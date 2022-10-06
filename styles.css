@@ -11,7 +11,8 @@
     --logo-font: Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif;
     --header-font: Lucida Sans Typewriter,Lucida Typewriter,monospace;
     --body-font: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace;
-    --main-bg-color: #4a4949;
+    --main-bg-color: #4b4b4b;
+    --secondary-bg-color:#cccccc;
     --header-font-color: rgb(0 228 227);
     --body-font-color: rgb(207, 206, 206);
     --secondary-font-color: rgb(10, 10, 10);
@@ -37,6 +38,7 @@ h2 {
 
 p {
     opacity: 0.7;
+    font-family: var(--body-font);
 }
 
 header {
@@ -46,6 +48,30 @@ header {
     padding: 0 120px;
     position: fixed;
     width: 100%;
+    z-index: 2;
+}
+
+button {
+    padding: 10px 20px;
+    font-family: var(--body-font);
+    font-weight: bold;
+    border-radius: 20px;
+    border: none;
+    background-color: var(--button-bg-color);
+    color: var(--button-focus-color);
+}
+
+/* 'Message Us' button change background and font colors on hover and font color again on active */
+
+button:hover {
+    background-color: var(--button-focus-color);
+    color: var(--button-bg-color);
+    cursor: pointer;
+    transition: 100ms linear;
+}
+
+button:active {
+    color: var(--header-font-color);
 }
 
 /* Header section styling */
@@ -86,17 +112,17 @@ header {
 
 /* About section styling */
 
-#about, #projects {
+#about, #projects, #contact {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 120px;
 }
 
 #about {
     gap: 20px;
     background-color: var(--main-bg-color);
     height: 100vh;
+    padding: 0 120px;
 }
 
 #about > * {
@@ -105,7 +131,6 @@ header {
 
 .about-body {
     color: var(--body-font-color);
-    font-family: var(--body-font);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -114,8 +139,8 @@ header {
 }
 
 .about-image {
-    background-color: #838383;
-    height: 207px;
+    background-color: var(--secondary-bg-color);
+    height: 233px;
     font-family: var(--body-font);
     text-align: center;
     display: flex;
@@ -125,35 +150,16 @@ header {
 
 .about-title {
     margin: 0;
-}
-
-.about-button {
-    padding: 10px 20px;
-    font-family: var(--body-font);
-    font-weight: bold;
-    border-radius: 20px;
-    border: none;
-    background-color: var(--button-bg-color);
-    color: var(--button-focus-color);
-}
-
-/* 'Message Us' button change background and font colors on hover and font color again on active */
-
-.about-button:hover {
-    background-color: var(--button-focus-color);
-    color: var(--button-bg-color);
-    cursor: pointer;
-    transition: 100ms linear;
-}
-
-.about-button:active {
-    color: var(--header-font-color);
+    font-family: var(--header-font);
+    font-size: 2.5em;
 }
 
 /*Projects section styling*/
 
 #projects {
    flex-direction: column; 
+   padding: 40px 160px 60px 160px;
+   scroll-margin-top: 57px;
 }
 
 .project-cards {
@@ -166,6 +172,7 @@ header {
 
 .projects-title {
     color: var(--secondary-font-color);
+    margin-top: 0;
 }
 
 .card, .card-link{
@@ -188,4 +195,74 @@ header {
     background-color: var(--main-bg-color);
     transition: 150ms linear;
     border-radius: 10px;
+}
+
+/* Quote section styling */
+
+.quote {
+    background-color: var(--secondary-bg-color);
+    padding: 60px 250px;
+}
+
+.quote-body {
+    color: var(--secondary-font-color);
+    font-size: 2em;
+    margin: 0;
+    font-style: italic;
+}
+
+.quote-author {
+    text-align: right;
+    font-family: var(--header-font);
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--secondary-font-color);
+    margin: 0;
+    margin-top: 10px;
+    opacity: 1;
+}
+
+/* Contact section styling. Floating contact element */
+
+#contact {
+    margin: 80px 120px;
+    padding: 20px 0;
+    background-color: var(--main-bg-color);
+    border-radius: 10px;
+    justify-content: space-around;
+    color: var(--header-font-color);
+}
+
+.contact-text {
+    margin: 10px 0;
+}
+
+.contact-title, .contact-body {
+    margin: 0;
+}
+
+.contact-button {
+    color: var(--header-font-color);
+    background-color: var(--main-bg-color);
+    border: 2px solid var(--button-bg-color);
+}
+
+.contact-button:hover {
+    background-color: var(--button-bg-color);
+    color: var(--header-font-color);
+}
+
+.contact-button:active {
+    color: var(--secondary-font-color);
+}
+
+/* Footer section styling */
+
+footer {
+    background-color: var(--main-bg-color);
+    color: var(--header-font-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
 }
