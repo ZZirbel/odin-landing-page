@@ -1,6 +1,11 @@
+/* Entire webpage set to border-box and smooth scrolling */
+
 *{
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
+
+/* Webpage color and font variables */
 
 :root {
     --logo-font: Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif;
@@ -9,16 +14,29 @@
     --main-bg-color: #4a4949;
     --header-font-color: rgb(0 228 227);
     --body-font-color: rgb(207, 206, 206);
+    --secondary-font-color: rgb(10, 10, 10);
     --button-bg-color: rgb(207, 206, 206);
     --button-focus-color: rgb(19, 19, 19);
 
 }
+
+/* General element styling */
 
 body{
     margin: 0;
     display:flex;
     flex-direction: column; 
     font-size: 16px;
+}
+
+h2 {
+    font-size: 1.75em;
+    font-weight: bold;
+    font-family: var(--header-font);
+}
+
+p {
+    opacity: 0.7;
 }
 
 header {
@@ -29,6 +47,8 @@ header {
     position: fixed;
     width: 100%;
 }
+
+/* Header section styling */
 
 .logo {
     color: var(--header-font-color);
@@ -46,21 +66,37 @@ header {
     align-items: center;
 }
 
-a{
+.nav-link{
     text-decoration: none;
     font-family: var(--header-font);
     color:var(--header-font-color);
-    opacity: 0.5
+    opacity: 0.7;
+}
+
+/* Nav-links change opacity on hover and font color on active */
+
+.nav-link:hover {
+    opacity: 1;
+    transition: 150ms linear;
+}
+
+.nav-link:active {
+    color: var(--body-font-color);
+}
+
+/* About section styling */
+
+#about, #projects {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 120px;
 }
 
 #about {
-    display: flex;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
     gap: 20px;
     background-color: var(--main-bg-color);
-    padding: 0 120px;
+    height: 100vh;
 }
 
 #about > * {
@@ -77,16 +113,9 @@ a{
     gap: 10px;
 }
 
-h2 {
-    font-size: 1.75em;
-    font-weight: bold;
-    font-family: var(--header-font);
-}
-
 .about-image {
     background-color: #838383;
     height: 207px;
-    color: var(--body-font-color);
     font-family: var(--body-font);
     text-align: center;
     display: flex;
@@ -108,11 +137,55 @@ h2 {
     color: var(--button-focus-color);
 }
 
+/* 'Message Us' button change background and font colors on hover and font color again on active */
+
 .about-button:hover {
     background-color: var(--button-focus-color);
     color: var(--button-bg-color);
+    cursor: pointer;
+    transition: 100ms linear;
 }
 
 .about-button:active {
     color: var(--header-font-color);
+}
+
+/*Projects section styling*/
+
+#projects {
+   flex-direction: column; 
+}
+
+.project-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.projects-title {
+    color: var(--secondary-font-color);
+}
+
+.card, .card-link{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    text-align: center;
+}
+
+.card-image {
+    height: 200px;
+    border-radius: 10px;
+    border: 4px solid var(--main-bg-color);
+}
+
+/* .Card-link change background color on hover */
+
+.card-link:hover{
+    cursor: pointer;
+    background-color: var(--main-bg-color);
+    transition: 150ms linear;
+    border-radius: 10px;
 }
