@@ -3,34 +3,42 @@
 }
 
 :root {
-    --title-font: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    --link-font: sans-serif;
-    --main-background-color: rgb(6, 9, 53);
-    --header-font-color: rgb(245, 208, 0);
+    --logo-font: Trebuchet MS,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Tahoma,sans-serif;
+    --header-font: Lucida Sans Typewriter,Lucida Typewriter,monospace;
+    --body-font: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace;
+    --main-bg-color: #4a4949;
+    --header-font-color: rgb(0 228 227);
+    --body-font-color: rgb(207, 206, 206);
+    --button-bg-color: rgb(207, 206, 206);
+    --button-focus-color: rgb(19, 19, 19);
+
 }
 
 body{
     margin: 0;
     display:flex;
     flex-direction: column; 
+    font-size: 16px;
 }
 
 header {
     display: flex;
     justify-content: space-between;
-    background-color: var(--main-background-color);
+    background-color: var(--main-bg-color);
     padding: 0 120px;
-
+    position: fixed;
+    width: 100%;
 }
 
 .logo {
     color: var(--header-font-color);
     margin: 10px 0;
     font-weight: bold;
-    font-family: var(--title-font);
+    font-family: var(--logo-font);
+    font-size: 2em;
 }
 
-ul{
+.nav-links{
     list-style-type: none;
     display: flex;
     gap: 50px;
@@ -40,16 +48,71 @@ ul{
 
 a{
     text-decoration: none;
-    font-family: var(--link-font);
+    font-family: var(--header-font);
     color:var(--header-font-color);
     opacity: 0.5
 }
 
 #about {
     display: flex;
-    height: calc(100vh - 57px);
+    height: 100vh;
     justify-content: center;
     align-items: center;
-    background-color: var(--main-background-color);
+    gap: 20px;
+    background-color: var(--main-bg-color);
     padding: 0 120px;
+}
+
+#about > * {
+    flex: 1 1 0;
+}
+
+.about-body {
+    color: var(--body-font-color);
+    font-family: var(--body-font);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+h2 {
+    font-size: 1.75em;
+    font-weight: bold;
+    font-family: var(--header-font);
+}
+
+.about-image {
+    background-color: #838383;
+    height: 207px;
+    color: var(--body-font-color);
+    font-family: var(--body-font);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-title {
+    margin: 0;
+}
+
+.about-button {
+    padding: 10px 20px;
+    font-family: var(--body-font);
+    font-weight: bold;
+    border-radius: 20px;
+    border: none;
+    background-color: var(--button-bg-color);
+    color: var(--button-focus-color);
+}
+
+.about-button:hover {
+    background-color: var(--button-focus-color);
+    color: var(--button-bg-color);
+}
+
+.about-button:active {
+    color: var(--header-font-color);
 }
